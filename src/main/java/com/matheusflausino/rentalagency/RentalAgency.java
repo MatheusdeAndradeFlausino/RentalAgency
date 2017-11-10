@@ -5,56 +5,38 @@
  */
 package com.matheusflausino.rentalagency;
 
+import com.matheusflausino.rentalagency.cars.Category;
+
 /**
  *
  * @author vanderlei
  */
 public abstract class RentalAgency {
-    
-    protected double rate;
-    protected double weekendRate;
-    protected double normalPrice;
-    protected double specialPrice;
-   
-    public RentalAgency(double rate, double weekendRate, double normalPrice, double specialPrice) {
-        this.rate = rate;
-        this.weekendRate = weekendRate;
-        this.normalPrice = normalPrice;
-        this.specialPrice = specialPrice;
-    }
-    
+
     public abstract String getRentalAgencyName();
 
-    public double getRate() {
-        return rate;
+    public abstract double getWeekendSpecialPrice();
+
+    public abstract double getWeekendNormalPrice();
+
+    public abstract double getNoWeekendSpecialPrice();
+
+    public abstract double getNoWeekendNormalPrice();
+
+    public abstract Category getCarCategory();
+
+    public double getPrice(boolean isWeekEnd, boolean isPremium) {
+        if (isWeekEnd) {
+            if (isPremium) {
+                return getWeekendSpecialPrice();
+            }
+            return getWeekendNormalPrice();
+        } else {
+            if (isPremium) {
+                return getNoWeekendSpecialPrice();
+            }
+            return getNoWeekendNormalPrice();
+        }
     }
 
-    public void setRate(double rate) {
-        this.rate = rate;
-    }
-
-    public double getWeekendRate() {
-        return weekendRate;
-    }
-
-    public void setWeekendRate(double weekendRate) {
-        this.weekendRate = weekendRate;
-    }
-
-    public double getNormalPrice() {
-        return normalPrice;
-    }
-
-    public void setNormalPrice(double normalPrice) {
-        this.normalPrice = normalPrice;
-    }
-
-    public double getSpecialPrice() {
-        return specialPrice;
-    }
-
-    public void setSpecialPrice(double specialPrice) {
-        this.specialPrice = specialPrice;
-    }   
-    
 }

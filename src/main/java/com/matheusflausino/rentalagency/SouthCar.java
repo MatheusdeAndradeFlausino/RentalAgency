@@ -1,23 +1,43 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.matheusflausino.rentalagency;
+
+import com.matheusflausino.rentalagency.cars.Category;
 
 /**
  *
  * @author vanderlei
  */
 public class SouthCar extends RentalAgency{
-
-    public SouthCar(double rate, double weekendRate, double normalPrice, double specialPrice) {
-        super(rate, weekendRate, normalPrice, specialPrice);
-    }
     
     @Override
     public String getRentalAgencyName() {
         return "SouthCar";
     }
+
+    @Override
+    public double getWeekendSpecialPrice() {
+        return 90d;
+    }
+
+    @Override
+    public double getWeekendNormalPrice() {
+        return 200d;
+    }
+
+    @Override
+    public double getNoWeekendSpecialPrice() {
+        return 150d;
+    }
+
+    @Override
+    public double getNoWeekendNormalPrice() {
+        return 210d;
+    }
+
+    @Override
+    public Category getCarCategory() {
+        return Category.COMPACT;
+    }
+    
+    
     
 }
