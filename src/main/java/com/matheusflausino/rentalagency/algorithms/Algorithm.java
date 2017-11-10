@@ -9,9 +9,11 @@ import com.matheusflausino.rentalagency.RentalAgency;
 import com.matheusflausino.rentalagency.cars.Car;
 import com.matheusflausino.rentalagency.cars.Category;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -32,9 +34,9 @@ public abstract class Algorithm {
 
     public abstract void calculeSolution(List<Car> cars, List<RentalAgency> agencies);
 
-    public void readFile(String path) {
+    public void readFile(URI path) {
         try {
-            BufferedReader br = new BufferedReader(new FileReader(path));
+            BufferedReader br = new BufferedReader(new FileReader(new File(path)));
             String line = br.readLine();
             while (line != null) {
                 Input input = new Input();
