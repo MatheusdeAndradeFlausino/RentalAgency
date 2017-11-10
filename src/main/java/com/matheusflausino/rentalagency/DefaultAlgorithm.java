@@ -9,15 +9,19 @@ package com.matheusflausino.rentalagency;
  *
  * @author vanderlei
  */
-public class SouthCar extends RentalAgency{
+public class DefaultAlgorithm extends Algorithm{
 
-    public SouthCar(double rate, double weekendRate, double normalPrice, double specialPrice) {
-        super(rate, weekendRate, normalPrice, specialPrice);
+    public DefaultAlgorithm() {
+        super();
+        this.readFile("/home/vanderlei/teste.txt");
     }
+   
     
     @Override
-    public String getRentalAgencyName() {
-        return "SouthCar";
+    public void calculeSolution() {
+        for (Input input : this.inputs) {
+            input.print();
+        }
     }
     
 }

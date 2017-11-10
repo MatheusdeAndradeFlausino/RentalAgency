@@ -11,6 +11,10 @@ package com.matheusflausino.rentalagency;
  */
 public class NorthCar extends RentalAgency {
 
+    public NorthCar(double rate, double weekendRate, double normalPrice, double specialPrice) {
+        super(rate, weekendRate, normalPrice, specialPrice);
+    }    
+    
     @Override
     public String getRentalAgencyName() {
         return "NorthCar";

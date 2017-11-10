@@ -10,14 +10,12 @@ package com.matheusflausino.rentalagency;
  * @author vanderlei
  */
 public abstract class RentalAgency {
-    private double rate;
-    private double weekendRate;
-    private double normalPrice;
-    private double specialPrice;
-
-    public RentalAgency() {
-    }
     
+    protected double rate;
+    protected double weekendRate;
+    protected double normalPrice;
+    protected double specialPrice;
+   
     public RentalAgency(double rate, double weekendRate, double normalPrice, double specialPrice) {
         this.rate = rate;
         this.weekendRate = weekendRate;
