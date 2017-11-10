@@ -3,14 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.matheusflausino.rentalagency;
+package com.matheusflausino.rentalagency.algorithms;
 
+import com.matheusflausino.rentalagency.RentalAgency;
+import com.matheusflausino.rentalagency.cars.Car;
+import com.matheusflausino.rentalagency.cars.Category;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -26,7 +30,7 @@ public abstract class Algorithm {
         this.inputs = new LinkedList<>();
     }
 
-    public abstract void calculeSolution();
+    public abstract void calculeSolution(List<Car> cars, List<RentalAgency> agencies);
 
     public void readFile(String path) {
         try {
@@ -40,14 +44,16 @@ public abstract class Algorithm {
 
                 String dates[] = parts[2].split(",");
                 ArrayList<String> days = new ArrayList<>();
+                Pattern p = Pattern.compile("\\((.*?)\\)");
+                
                 for (String date : dates) {
-                    Pattern p = Pattern.compile("\\((.*?)\\)");
                     Matcher m = p.matcher(date);
 
                     if (m.find()) {
                         days.add(m.group(1));
                     }
                 }
+                
                 input.setWeekDays(days);
                 this.inputs.add(input);
                 line = br.readLine();
@@ -59,6 +65,19 @@ public abstract class Algorithm {
             System.out.println("Ocorreu um erro ao tentar ler o arquivo! Path: " + path);
             System.out.println("Erro: " + ex.getMessage());
         }
+    }
+    
+    public boolean isWeekend(String day) {
+        return day.equals("sab") || day.equals("dom");
+    }
+    
+    public List<Car> getCarsFromCategory(List<Car> cars, Category category){
+        List<Car> selectedCars = new LinkedList<>();
+        for (Car car : cars) {
+            if(car.getCategory().equals(category))
+                selectedCars.add(car);
+        }
+        return selectedCars;
     }
 
 }
@@ -96,14 +115,11 @@ class Input {
     public void setWeekDays(ArrayList<String> weekDays) {
         this.weekDays = weekDays;
     }
-
-    public boolean isWeekend(String day) {
-        return weekDays.contains(day);
-    }
     
     public void print(){
         System.out.println("Is Special Price? " + this.isSpecialPrice);
         System.out.println("Number Passengers " + this.nrPassenger);
+        System.out.print(" Week days : ");
         for (String weekDay : weekDays) {
             System.out.print(weekDay + " ");
         }

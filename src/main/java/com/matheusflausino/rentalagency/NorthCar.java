@@ -5,19 +5,41 @@
  */
 package com.matheusflausino.rentalagency;
 
+import com.matheusflausino.rentalagency.cars.Category;
+
 /**
  *
  * @author vanderlei
  */
 public class NorthCar extends RentalAgency {
-
-    public NorthCar(double rate, double weekendRate, double normalPrice, double specialPrice) {
-        super(rate, weekendRate, normalPrice, specialPrice);
-    }    
     
     @Override
     public String getRentalAgencyName() {
         return "NorthCar";
     }
+
+    @Override
+    public double getWeekendSpecialPrice() {
+        return 590d;
+    }
+
+    @Override
+    public double getWeekendNormalPrice() {
+        return 600d;
+    }
+
+    @Override
+    public double getNoWeekendSpecialPrice() {
+        return 580d;
+    }
+
+    @Override
+    public double getNoWeekendNormalPrice() {
+        return 630d;
+    }
     
+    @Override
+    public Category getCarCategory() {
+        return Category.SUV;
+    }
 }
