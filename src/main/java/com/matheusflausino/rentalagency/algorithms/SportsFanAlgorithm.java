@@ -54,6 +54,7 @@ public class SportsFanAlgorithm extends Algorithm {
 
     private void printResult(RentalAgency agency, List<Car> listCarsFromBestAgency, int index) {
         System.out.println("OUTPUT: " + index);
+        System.out.print("\t");
         for (Car car : listCarsFromBestAgency) {
             System.out.print(car.getModel() + " ");
         }

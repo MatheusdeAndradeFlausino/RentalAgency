@@ -49,42 +49,48 @@ Premium:6:01Set2009(sab),02Set2009(dom)
 Premium:1:16Mar2009(seg),17Mar2009(ter),18Mar2009(qua)
 ```
 
-Note que, seguir o padrão do arquivo de instância é fundamental para execução do algoritmo
+Obs>: seguir o padrão do arquivo de instância é fundamental para perfeita execução do algoritmo.
 
+Note que o arquivo de instância permiti informar a situação de diversos clientes. O algoritmo é capaz
+de ler cada uma das linhas, calcular o resultado e então exibir este resultado na tela.
 
+## Algoritmos
 
-## Running the tests
+Este projeto possui 3 algoritmos para calcular a solução desejada. Os 3 algoritmos são muito similares,
+porém cada um deles leva em consideração algum fator que o faz ser um pouco mais específico.
 
-Explain how to run the automated tests for this system
+# 1 - Algoritmo Padrão (DefaultAlgorithm)
 
-### Break down into end to end tests
+Este algoritmo calculará qual locadora disponibilizará o automóvel no menor preço e havendo empate
+, ou seja, mais de uma locadora oferencendo o mesmo preço para aluguel, ele listará ambas locadoras
+e seus respectivos carros.
 
-Explain what these tests test and why
+# 2 - Algoritmo Simples (SimpleAlgorithm)
+
+Este algoritmo também calculará qual locadora disponibilizará o automóvel no menor preço, no entanto
+não observará empates de preço assumindo a primeira opção(locadora) encontrada como sendo a melhor.
+
+# 3 - Fanático por carro sport (SportsFanAlgorithm)
+
+Este algoritmo também calculará qual locadora disponibilizará o automóvel no menor preço, no entanto
+havendo empate no preço do aluguel ele não pensará duas vezes em escolher a locadora que oferecer um carro sport.
+
+Para alternar entre os algoritmos que calcularão os resultados, basta ir na Classe **Main** do projeto
+e dentro do método **main()** alterar a instância do algoritmo que está sendo criada.
+
+Exemplo
 
 ```
-Give an example
+algorithm = new SportsFanAlgorithm(Main.class.getResource("/instance.txt").toURI());
 ```
 
-### And coding style tests
+Para finalizar, basta executar o projeto.
 
-Explain what these tests test and why
 
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
+## Construído com
 
 * [NetBeans](https://netbeans.org/) - Ambiente de desenvolvimento
 * [Maven](https://maven.apache.org/) - Gerenciador de dependências
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Autor
 
