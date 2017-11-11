@@ -16,8 +16,8 @@ Maven
 
 ## Iniciando o projeto
 
-Para abrir o projeto no netbeans, navegue até a página do projeto [RentalAgency](https://github.com/MatheusdeAndradeFlausino/RentalAgency)
-e faça o download ou clone do projeto para um diretório da sua máquina. Em seguida, 
+Para abrir o projeto no netbeans, navegue até a página do projeto [RentalAgency](https://github.com/MatheusdeAndradeFlausino/RentalAgency), selecione a branch
+matheus.flausino e faça o download ou clone do projeto para um diretório da sua máquina. Em seguida, 
 abra a IDE Netbeans, clique na opção **Arquivo -> Abrir Projeto (Ctrl + Shift + O)** , navegue até o diretório
 em que o projeto acabou de ser salvo e clique em Abrir.
 
@@ -68,7 +68,7 @@ e seus respectivos carros.
 ### 2 - Algoritmo Simples (SimpleAlgorithm)
 
 Este algoritmo também calculará qual locadora disponibilizará o automóvel no menor preço, no entanto
-não observará empates de preço assumindo a primeira opção(locadora) encontrada como sendo a melhor.
+não observará empates de preço, assumindo a primeira opção(locadora) encontrada como sendo a melhor.
 
 ### 3 - Fanático por carro sport (SportsFanAlgorithm)
 
