@@ -2,6 +2,7 @@ package com.matheusflausino.rentalagency.algorithms;
 
 import com.matheusflausino.rentalagency.RentalAgency;
 import com.matheusflausino.rentalagency.cars.Car;
+import com.matheusflausino.rentalagency.exceptions.CrowdedCar;
 import java.net.URI;
 import java.util.List;
 
@@ -11,9 +12,8 @@ import java.util.List;
  */
 public class SimpleAlgorithm extends Algorithm {
 
-    public SimpleAlgorithm(URI path) {
-        super();
-        this.readFile(path);
+    public SimpleAlgorithm(URI path) throws CrowdedCar {
+        super(path);
     }
 
     @Override

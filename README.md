@@ -59,33 +59,31 @@ de ler cada uma das linhas, calcular o resultado e então exibir este resultado 
 Este projeto possui 3 algoritmos para calcular a solução desejada. Os 3 algoritmos são muito similares,
 porém cada um deles leva em consideração algum fator que o faz ser um pouco mais específico.
 
-# 1 - Algoritmo Padrão (DefaultAlgorithm)
+### 1 - Algoritmo Padrão (DefaultAlgorithm)
 
 Este algoritmo calculará qual locadora disponibilizará o automóvel no menor preço e havendo empate
 , ou seja, mais de uma locadora oferencendo o mesmo preço para aluguel, ele listará ambas locadoras
 e seus respectivos carros.
 
-# 2 - Algoritmo Simples (SimpleAlgorithm)
+### 2 - Algoritmo Simples (SimpleAlgorithm)
 
 Este algoritmo também calculará qual locadora disponibilizará o automóvel no menor preço, no entanto
 não observará empates de preço assumindo a primeira opção(locadora) encontrada como sendo a melhor.
 
-# 3 - Fanático por carro sport (SportsFanAlgorithm)
+### 3 - Fanático por carro sport (SportsFanAlgorithm)
 
 Este algoritmo também calculará qual locadora disponibilizará o automóvel no menor preço, no entanto
 havendo empate no preço do aluguel ele não pensará duas vezes em escolher a locadora que oferecer um carro sport.
 
-Para alternar entre os algoritmos que calcularão os resultados, basta ir na Classe **Main** do projeto
-e dentro do método **main()** alterar a instância do algoritmo que está sendo criada.
+### Escolhendo um algoritmo
+Ao executar o projeto, será pedido para informar o nome do arquivo de instância. Digite apenas 'nome_arquivo'.'formato'.
+Em seguida será apresentada um breve menu para a escolha do algoritmo, após isso o algoritmo será executado automaticamente e é só aguardar o fim.
 
-Exemplo
 
-```
-algorithm = new SportsFanAlgorithm(Main.class.getResource("/instance.txt").toURI());
-```
-
-Para finalizar, basta executar o projeto.
-
+## Exceções
+Se no arquivo de instâncias existir uma instância(linha) que informe um número de passageiros
+maior que o suportado por qualquer categoria de carro da locadora, então será lançada uma exceção
+chamada **CrowdedCar**
 
 ## Construído com
 

@@ -2,6 +2,7 @@ package com.matheusflausino.rentalagency.algorithms;
 
 import com.matheusflausino.rentalagency.RentalAgency;
 import com.matheusflausino.rentalagency.cars.Car;
+import com.matheusflausino.rentalagency.exceptions.CrowdedCar;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.List;
@@ -13,9 +14,8 @@ import java.util.Map;
  */
 public class DefaultAlgorithm extends Algorithm {
 
-    public DefaultAlgorithm(URI path) {
-        super();
-        this.readFile(path);
+    public DefaultAlgorithm(URI path) throws CrowdedCar {
+        super(path);
     }
 
     @Override
