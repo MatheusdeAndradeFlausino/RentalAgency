@@ -7,6 +7,7 @@ import com.matheusflausino.rentalagency.WestCar;
 import com.matheusflausino.rentalagency.algorithms.Algorithm;
 import com.matheusflausino.rentalagency.algorithms.DefaultAlgorithm;
 import com.matheusflausino.rentalagency.algorithms.SimpleAlgorithm;
+import com.matheusflausino.rentalagency.algorithms.SportsFanAlgorithm;
 import com.matheusflausino.rentalagency.cars.Car;
 import com.matheusflausino.rentalagency.cars.Category;
 import java.io.InputStream;
@@ -46,7 +47,7 @@ public class Main {
         
         try {
             // colocar arquivo de instância no pacote src/main/resources e alterar o nome '/instace.txt' para referenciá-lo
-            algorithm = new SimpleAlgorithm(Main.class.getResource("/instance.txt").toURI());
+            algorithm = new SportsFanAlgorithm(Main.class.getResource("/instance.txt").toURI());
             algorithm.calculeSolution(cars, agencies);
         } catch (URISyntaxException ex) {
             System.out.println("Erro -> " + ex.getMessage());
